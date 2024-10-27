@@ -3,19 +3,108 @@ import 'package:collection/collection.dart';
 
 
 class FakePetRepository {
-  final List<Pet> _pets = [
-const Pet('1','Pummel', Species.fish, 3, 200, 20, true),
-const Pet('1', 'Max', Species.dog, 5, 30, 50, false),
-const Pet('2', 'Bella', Species.cat, 3, 4, 25, true),
-const Pet('3', 'Kiki', Species.bird, 2, 0.5, 10, true),
-const Pet('4', 'Goldie', Species.fish, 1, 0.2, 4, true),
-const Pet('5', 'Nala', Species.cat, 2, 3.5, 22, true),
-const Pet('6', 'Buddy', Species.dog, 6, 28, 48, false),
-const Pet('7', 'Sky', Species.bird, 4, 0.6, 15, false),
-const Pet('8', 'Milo', Species.fish, 2, 0.3, 5, false),
-const Pet('9', 'Luna', Species.cat, 1, 3, 24, true),
-const Pet('10', 'Charlie', Species.dog, 7, 32, 52, false),
-  ];
+final List<Pet> _pets = [
+  const Pet(
+    id: '1',
+    name: 'Pummel',
+    species: Species.fish,
+    age: 3,
+    weight: 200,
+    height: 20,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '1',
+    name: 'Max',
+    species: Species.dog,
+    age: 5,
+    weight: 30,
+    height: 50,
+    isFemale: false,
+  ),
+  const Pet(
+    id: '2',
+    name: 'Bella',
+    species: Species.cat,
+    age: 3,
+    weight: 4,
+    height: 25,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '3',
+    name: 'Kiki',
+    species: Species.bird,
+    age: 2,
+    weight: 0.5,
+    height: 10,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '4',
+    name: 'Goldie',
+    species: Species.fish,
+    age: 1,
+    weight: 0.2,
+    height: 4,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '5',
+    name: 'Nala',
+    species: Species.cat,
+    age: 2,
+    weight: 3.5,
+    height: 22,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '6',
+    name: 'Buddy',
+    species: Species.dog,
+    age: 6,
+    weight: 28,
+    height: 48,
+    isFemale: false,
+  ),
+  const Pet(
+    id: '7',
+    name: 'Sky',
+    species: Species.bird,
+    age: 4,
+    weight: 0.6,
+    height: 15,
+    isFemale: false,
+  ),
+  const Pet(
+    id: '8',
+    name: 'Milo',
+    species: Species.fish,
+    age: 2,
+    weight: 0.3,
+    height: 5,
+    isFemale: false,
+  ),
+  const Pet(
+    id: '9',
+    name: 'Luna',
+    species: Species.cat,
+    age: 1,
+    weight: 3,
+    height: 24,
+    isFemale: true,
+  ),
+  const Pet(
+    id: '10',
+    name: 'Charlie',
+    species: Species.dog,
+    age: 7,
+    weight: 32,
+    height: 52,
+    isFemale: false,
+  ),
+];
+
 
   FakePetRepository();
 
@@ -51,11 +140,20 @@ const Pet('10', 'Charlie', Species.dog, 7, 32, 52, false),
    }
 
 static String makeACoolPetName(
-  String nameILike, Species species,
-){
-String coolName = '$nameILike the ${species.name}';
-return coolName;
+String nameILike, {
+  String? titleOfNobility,
+  required Species species,
+  String coolAdjective = 'Gaangstaaa',
+}) {
+titleOfNobility = titleOfNobility ?? '';
+String coolName = '$titleOfNobility $nameILike the $coolAdjective ${species.name}';
+return coolName; 
 
 }
+
+final coolPetName = FakePetRepository.makeACoolPetName('Dieter',
+titleOfNobility: 'Herr',
+coolAdjective: 'ficker',
+ species: Species.fish);
 
 }

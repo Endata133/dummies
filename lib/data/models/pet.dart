@@ -12,14 +12,14 @@ final double height;
 final bool isFemale;
 
 
-const Pet(
-this.id,
-this.name,
-this.species,
-this.age,
-this.weight,
-this.height,
-this.isFemale,
-
+const Pet({
+required this.id,
+required this.name,
+required this.species,
+required this.age,
+required this.weight,
+required this.height,
+this.isFemale = true,
+}
 );
 }

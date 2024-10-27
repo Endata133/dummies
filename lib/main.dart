@@ -11,9 +11,23 @@ final pets = petRepository.getAllPets();
 print(pets.length);
 print('hello');
 
+final coolPetName = FakePetRepository.makeACoolPetName('Dieter',
+titleOfNobility: 'Herr',
+coolAdjective: 'ficker',
+species: Species.fish);
+print(coolPetName);
+
+final anotherCoolPetName = FakePetRepository.makeACoolPetName(
+  'gustavo',
+  species:Species.bird );
+  print(anotherCoolPetName);
+
+
 runApp(const MyApp());
 
 }
+
+
 
 // void main(){
 // const pummelDerFish = Pet('1', 'Pummel', Species.fish, 3, 200, 20, true);
